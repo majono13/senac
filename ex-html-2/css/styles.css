@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor1);
+    font-family: var(--font);
+}
+
+:root {
+    --cor0: #e8e2e6;
+    --cor1: #ddcfcf;
+    --cor2: #7c6156;
+    --cor3: #302925;
+
+    --font: "Montserrat", sans-serif;
+}
+
+/*******HEADER******/
+
+header img {
+    width: 100%;
+    bottom: 0;
+}
+
+/****** NAV *****/
+nav {
+    height: 30em;
+    text-align: left;
+    background-image: url("../img/header.jpg");
+    background-size: cover;
+    opacity: 0.9;
+    padding-left: 10px;
+}
+nav ul li {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 25em;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor3);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/*******MAIN*****/
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.7em 0.7em 3em 0.7em;
+}
+
+main h1 {
+    text-align: center;
+    color: var(--cor3);
+    margin: 2.5em 0;
+}
+
+.img {
+    /*div que centralizam as imaagens maiores*/
+    text-align: center;
+    padding: 20px;
+}
+
+.img img {
+    max-width: 100%;
+}
+
+main p {
+    font-size: 1.2em;
+    line-height: 2em;
+    text-align: justify;
+}
+
+.products {
+    max-width: 100%;
+    display: flex;
+    margin-top: 1.2em;
+    margin-bottom: 3em;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 1px 1px 3px #3029253a;
+    border-radius: 10px;
+}
+
+.products h2 {
+    color: var(--cor3);
+    padding: 10px;
+}
+.products img {
+    max-width: 25em;
+    float: left;
+    padding-right: 1em;
+}
+
+.voltar {
+    text-decoration: none;
+    font-size: 1.3em;
+    color: var(--cor3);
+    text-align: center;
+}
+
+/*************PAG CONTATO**********/
+.container {
+    padding: 5em 0.7em 0 0.7em;
+    max-width: 50em;
+    height: 15em;
+    margin: auto;
+}
+section {
+    height: 100%;
+    display: flex;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.301);
+    margin-bottom: 8em;
+}
+
+.container h1 {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--cor2);
+    border-radius: 15px 15px 0 0;
+}
+
+section p {
+    color: var(--cor3);
+    padding-top: 20px;
+    font-size: 1.2em;
+    margin-left: 5em;
+    text-align: center;
+}
+
+section i {
+    padding-top: 10px;
+    font-size: 1.8em;
+}
+
+.contato {
+    font-style: italic;
+}
+
+/***********FOOTER******/
+
+footer {
+    margin-top: 30px;
+    max-width: 1200px;
+    text-align: center;
+    margin: auto;
+}
+
+footer hr {
+    opacity: 0.3;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.192);
+}
+
+footer ul li {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--color2);
+    font-size: 1.3em;
+}
+
+footer a:hover {
+    font-weight: bold;
+    color: var(--color4);
+}
+
+.footer-none {
+    display: none;
+}
+
+/**********MEDIA***********/
+
+@media (max-width: 800px) {
+    nav {
+        background-image: url("../img/header-mobile.jpg");
+        height: 16em;
+        text-align: center;
+    }
+    nav ul li {
+        margin-top: 10em;
+    }
+    nav a {
+        font-size: 1.2em;
+    }
+
+    .products {
+        display: block;
+        text-align: center;
+    }
+
+    .products img {
+        float: none;
+    }
+
+    section {
+        display: block;
+        height: auto;
+    }
+}
