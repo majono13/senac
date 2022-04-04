@@ -107,6 +107,7 @@ main p {
     font-size: 1.3em;
     color: var(--cor3);
     text-align: center;
+    padding: 3em;
 }
 
 /*************PAG CONTATO**********/
