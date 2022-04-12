@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/******************HEADER E NAV***********/
+
+nav {
+    background-color: rgb(207, 198, 198);
+    height: 6em;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.534);
+    position: sticky;
+    top: 0;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 0.8em;
+    margin-top: 1em;
+}
+
+nav a {
+    font-size: 1.3em;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    transition: .3s;
+}
+
+.logo {
+    max-width: 1.5em;
+}
+
+/************ CONTEUDO ***********/
+
+main {
+    margin: auto;
+    padding: 0.9em;
+    max-width: 1200px;
+}
+
+main p {
+    text-align: justify;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+main h1 {
+    text-align: center;
+    padding: 1em;
+}
+
+.container {
+    max-width: 100%;
+}
+/*GALERIA*/
+
+.gallery {
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1em;
+}
+
+.card {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
+    border-radius: 5px;
+}
+
+.card-img {
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.card-img:hover {
+    border: 1px solid gray;
+}
+
+.card p {
+    max-width: 100%;
+    margin: 10px;
+}
+
+/*************FOOTER********/
+
+footer {
+    background-color: rgb(207, 198, 198);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.534);
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    font-size: 1.5em;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .gallery{
+        display: block;
+    }
+}
