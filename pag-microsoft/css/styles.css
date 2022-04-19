@@ -231,3 +231,8 @@ footer a, .rodape a {
 .rodape p {
     padding-right: 100px;
 }
+
+
+footer a:hover, .rodape a:hover {
+    text-decoration: underline;
+}
