@@ -24,12 +24,25 @@ nav ul {
 nav a {
     font-size: 1em;
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 10px 3px 10px;
     color: rgb(77, 75, 75);
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a:hover, .sub:hover {
+    border-bottom: 2px solid black;
+}
+
+nav a:active {
+    border-style: dashed;
+    border-width: thin;
+    padding: 15px;
+    
+}
+
+/*sub-menu (toda a microsoft)*/
+
+.sub {
+    cursor: pointer;
 }
 
 .rigthMenu {
@@ -80,7 +93,7 @@ nav a:hover {
 }
 
 .showCase a:hover, .showCase2 a:hover {
-    text-decoration: underline;
+    border-bottom: 1px black; 
     font-weight: bold;
 }
 
@@ -153,11 +166,12 @@ nav a:hover {
 .cards a {
     text-decoration: none;
     color: rgb(97, 97, 204);
-    font-size: 1.1em;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .cards a:hover {
-    text-decoration: underline;
+    border-bottom: 1px solid;
 }
 
 #h2-card-2 {
@@ -234,5 +248,5 @@ footer a, .rodape a {
 
 
 footer a:hover, .rodape a:hover {
-    text-decoration: underline;
+    border-bottom: 1px solid;
 }
