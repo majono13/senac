@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de veículos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <section>
+        <div class="container">
+            <h1>
+                Cadastro de veículos
+            </h1>
+            <label for="marca"> Marca: </label>
+            <input type="text" name="marca" class="marca" placeholder="Digite a marca do veículo">
+
+            <label for="modelo"> Modelo:</label>
+            <input type="text" name="modelo" class="modelo" placeholder="Digite o modelo do veículo">
+
+            <label for="cor"> Cor:</label>
+            <input type="text" name="cor" class="cor" placeholder="Digite a cor do veículo">
+
+
+            <label for="anoF"> Ano de fabricação:</label>
+            <input type="number" name="anoF" class="anoF" placeholder="Digite o ano de fabricação">
+
+            <label for="anoM"> Ano de modelo:</label>
+            <input type="number" name="anoM" class="anoM" placeholder="Digite o ano de fabricação">
+
+            <label for="km"> Km:</label>
+            <input type="number" name="km" class="km" placeholder="Digite a quantidade de Km rodados">
+
+            <label for="valor"> Valor:</label>
+            <input type="number" name="valor" class="valor" placeholder="Digite o valor do veículo">
+
+
+            <button onclick="estoque.adicionar()" class="ad" id="ad">Adicionar</button>
+
+            <button onclick="estoque.excluir()" class="excluir" id="excluir">Excluir</button>
+        
+
+            <h1>Veiculos cadastrados:</h1>
+            <div class="lista"><div id="lista">
+                
+            </div></div>
+        </div>
+    </section>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
