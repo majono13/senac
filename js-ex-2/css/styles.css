@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(189, 241, 241);
+}
+
+section {
+    margin: auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.39);
+    text-align: center;
+    height: auto;
+    width: 600px;
+    background-color: white;
+    margin-top: 100px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.container {
+    padding-top: 20px;
+}

@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(189, 241, 241);
+}
+
+section {
+    margin: auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.39);
+    text-align: center;
+    height: auto;
+    width: 600px;
+    background-color: white;
+    margin-top: 100px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.container {
+    padding: 20px;
+    text-align: left;
+}
+
+.container label {
+    font-size: 1.2em;
+}
+
+.anoNas,
+.anoAtual,
+.aniversario {
+    display: block;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 30px;
+}
+
+.ad,
+.apagar {
+    padding: 7px;
+    margin: 8px;
+    background-color: rgb(24, 104, 104);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.192);
+    font-weight: bold;
+    color: white;
+    width: auto;
+}
+
+#lista {
+    text-align: left;
+    font-size: 1.3em;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#total,
+.textTotal {
+    font-size: 1.5em;
+    font-weight: bold;
+}

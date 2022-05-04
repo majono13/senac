@@ -26,6 +26,7 @@ nav a {
     text-decoration: none;
     padding: 10px 10px 3px 10px;
     color: rgb(77, 75, 75);
+
 }
 
 nav a:hover, .sub:hover {
@@ -35,8 +36,17 @@ nav a:hover, .sub:hover {
 nav a:active {
     border-style: dashed;
     border-width: thin;
-    padding: 15px;
+    padding-bottom: 10px;
     
+}
+
+.mainMenu {
+    display: flex;
+    align-items: center;
+}
+
+.mainMenu img {
+    padding-right: 20px;
 }
 
 /*sub-menu (toda a microsoft)*/
