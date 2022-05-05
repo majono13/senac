@@ -6,8 +6,9 @@ class Estoque {
         this.anoFab = document.querySelector('.anoF');
         this.anoMod = document.querySelector('.anoM');
         this.km = document.querySelector('.km');
-        this.valor = document.querySelector('.valor')
-        this.carro = []
+        this.valor = document.querySelector('.valor');
+        this.carro = [];
+        this.id = 0;
     }
 
     //validação de campos no input
@@ -29,15 +30,16 @@ class Estoque {
         infoCarro.anoMod = this.anoMod.value;
         infoCarro.km = this.km.value;
         infoCarro.valor = this.valor.value
+        infoCarro.id = this.id;
 
-        console.log(infoCarro)
         return infoCarro
     }
     adicionar() {
         if (this.validaDados()) {
             const info = this.criaObjt();
             this.carro.push(info);
-            this.exibeCadastro();
+            this.id++
+            exibeCadastro();
             this.limpaInput();
         } else {
             alert('Vefifique se todos os campos foram preenchidos');
@@ -57,27 +59,59 @@ class Estoque {
         document.querySelector('.marca').focus()
     }
 
-    //exibe cadastro no html
-    exibeCadastro() {
-        const lista = document.querySelector('.lista')
-        const carro = this.criaObjt()
-        let i = 0
-        lista.innerHTML = ''
-        for (i in this.carro) {
-            lista.innerHTML += `<h1>Carro ${Number(i) + 1}</h1>`
-            lista.innerHTML += `<p>Marca: ${carro.marca}</p>`;
-            lista.innerHTML += `<p>Modelo: ${carro.modelo}</p>`;
-            lista.innerHTML += `<p>Cor: ${carro.cor}</p>`;
-            lista.innerHTML += `<p>Ano de fabricação: ${carro.anoFab}</p>`;
-            lista.innerHTML += `<p>Ano do modelo: ${carro.anoMod}</p>`;
-            lista.innerHTML += `<p>Km: ${carro.km}</p>`;
-            lista.innerHTML += `<p>Valor: ${carro.valor}</p>`;
+    remover(id) {
+
+        if (confirm(`Deseja realmente deletar este carro com o ID ${id}?`)) {
+            let tbody = document.querySelector('#tbody');
+
+            for (let i = 0; i < this.carro.length; i++) {
+                if (this.carro[i].id == id) {
+
+                    this.carro.splice(i, 1)
+                    tbody.deleteRow(i);
+                }
+            }
         }
     }
+}
 
-    excluir() {
-        this.carro.pop()
-        this.exibeCadastro()
+//exibe cadastro no html
+function exibeCadastro() {
+    const tbody = document.querySelector('#tbody')
+    const carro = estoque.carro
+
+    tbody.innerText = ''
+    for (let i in carro) {
+        const tr = tbody.insertRow();
+        let tdMarca = tr.insertCell();
+        let tdModelo = tr.insertCell();
+        let tdCor = tr.insertCell();
+        let tdAnoFab = tr.insertCell();
+        let tdAnoMod = tr.insertCell();
+        let tdKm = tr.insertCell();
+        let tdValor = tr.insertCell();
+        let tdRemover = tr.insertCell();
+
+        tdMarca.innerText = carro[i].marca.toUpperCase();
+        tdModelo.innerText = carro[i].modelo.toUpperCase();
+        tdCor.innerText = carro[i].modelo.toUpperCase();
+        tdAnoFab.innerText = carro[i].anoFab;
+        tdAnoMod.innerText = carro[i].anoMod;
+        tdKm.innerText = carro[i].km;
+        tdValor.innerText = carro[i].valor;
+        tdRemover.innerText = 'REMOVER';
+
+        tdRemover.classList = 'rem';
+
+        tdRemover.addEventListener('click', function (e) {
+            const el = e.target;
+
+            if (el.classList.contains('rem')) {
+                estoque.remover(carro[i].id);
+            }
+        })
+
+
     }
 }
 

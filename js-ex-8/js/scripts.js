@@ -1,5 +1,5 @@
 
-class Pedido {
+class Pedidos {
     constructor() {
         this.itensForm = document.querySelectorAll('.itens');
         this.nome = document.querySelector('#nome');
@@ -12,8 +12,9 @@ class Pedido {
             for (const check of this.itensForm) {
                 if (check.checked) {
                     this.itens.push(check.value)
-                    this.desabilitaBotao();
+                    this.novoPedido();
                     this.criaPedido();
+                    console.log(this.itens)
                 }
             }
         } else {
@@ -36,11 +37,21 @@ class Pedido {
     }
 
     //desabilita botão após formulário ser enviado
-    desabilitaBotao() {
-        const button = document.querySelector('#button');
+    novoPedido() {
+        const button = document.querySelector('.button')
+        button.innerText = 'Fazer novo pedido';
 
-        button.disabled = true
+        button.addEventListener('click', function (e) {
+            const el = e.target;
+
+            if (el.classList.contains('button')) {
+
+                document.querySelector('#nome').value = '';
+
+            }
+        })
     }
+
 
     somaTotal() {
         let total = 0
@@ -52,7 +63,7 @@ class Pedido {
         for (let i in valores) {
             total += valores[i] / 100
         }
-        return total;
+        return total.toFixed(2);
     }
 
     criaPedido() {
@@ -77,4 +88,6 @@ function exibePedido(pedido) {
 
     divPedido.innerHTML += `<p>TOTAL: R$${pedido.total}</p>`
 }
-const pedido = new Pedido();
+const pedido = new Pedidos();
+
+console.log(pedido)

@@ -38,15 +38,25 @@
 
 
             <button onclick="estoque.adicionar()" class="ad" id="ad">Adicionar</button>
-
-            <button onclick="estoque.excluir()" class="excluir" id="excluir">Excluir</button>
         
-
-            <h1>Veiculos cadastrados:</h1>
-            <div class="lista"><div id="lista">
-                
-            </div></div>
-        </div>
+            <div class="lista">
+                <table>
+                    <thead>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Cor</th>
+                        <th>Ano de Fabricação</th>
+                        <th>Ano de modelo</th>
+                        <th>Km</th>
+                        <th>Valor</th>
+                        <th>Remover</th>
+                    </thead>
+    
+                    <tbody id="tbody">
+                        
+                    </tbody>
+                </table>
+            </div>
     </section>
 
     <script src="js/scripts.js"></script>

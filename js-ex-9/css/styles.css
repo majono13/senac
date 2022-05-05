@@ -1,5 +1,6 @@
 body {
     background-color: rgb(189, 241, 241);
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 section {
@@ -7,7 +8,7 @@ section {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.39);
     text-align: center;
     height: auto;
-    width: 600px;
+    max-width: 70%;
     background-color: white;
     margin-top: 100px;
     border-radius: 10px;
@@ -43,8 +44,31 @@ section {
     width: auto;
 }
 
-#lista {
-    text-align: left;
-    font-size: 1.3em;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+h1 {
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.lista {
+    text-align: center;
+    font-size: 1em;
+}
+
+table th {
+    background-color: #ccc;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 85%;
+    padding-top: 30px;
+}
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.rem {
+    cursor: pointer;
 }
