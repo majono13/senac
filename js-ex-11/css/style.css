@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../img/background-body.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.container {
+    background-color: rgb(243, 239, 231);
+    max-width: 1200px;
+    margin: 50px auto;
+    height:auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.562);
+    padding-bottom: 30px;
+
+}
+
+.container h1 {
+    padding: 20px 20px 10px 20px;
+    text-align: center;
+    color:rgb(99, 88, 68);
+    font-size: 2.5em;
+}
+
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+.section label {
+    font-size: 1.4em;
+    color:rgb(99, 88, 68);
+}
+
+#nome {
+    width: 50%;
+    padding: 8px;
+    border-radius: 5px;
+    border-width: thin;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.185);
+    outline: 0;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+#texto {
+    width: 50%;
+    height: 40vh;
+    border-radius: 5px;
+    border-width: thin;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.185);
+    outline: 0;
+    text-align: center;
+    margin-left: 85px;
+    font-size: 1.5em;
+}
+
+.section button {
+    margin: 20px;
+    width: 150px;
+    padding: 5px;
+    font-size: 1.2em;
+    border-radius: 3px;
+    border-width: thin;
+    background-color: rgb(99, 88, 68);
+    color: rgb(243, 235, 219);
+    cursor: pointer ;
+}
+
+.container button:hover {
+    background-color: rgb(71, 64, 49);
+}
+
+.postagem {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.356);
+    MAX-width: 80%;
+    border-radius: 8px;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+
+.postagem h2 {
+    color: rgb(71, 64, 49);
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+.postagem p {
+    max-width: 100%;
+    font-size: 1em;
+    padding: 10px;
+    text-align: justify;
+}
+
+.btn-excluir, .btn-editar {
+    margin-right: 10px;
+    width: 80px;
+    padding: 5px;
+    font-size: 0.9em;
+    border-radius: 3px;
+    border-width: thin;
+    background-color: rgb(99, 88, 68);
+    color: rgb(243, 235, 219);
+    cursor: pointer;
+    margin-top: 10px;
+}
+.img-user {
+    max-width: 100px;
+}
+
+.postagem p, .div-img {
+    display: inline;
+}
+
