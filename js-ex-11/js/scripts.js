@@ -76,7 +76,7 @@ class Post {
 
         button.addEventListener('click', () => {
             if (button.classList.contains('atualizar')) {
-                let novArray = this.postagem.map(() => {
+                this.postagem.map(() => {
                     this.postagem[id].mensagem = this.conteudo.value
                 })
                 this.exibeMensagem(this.postagem)
