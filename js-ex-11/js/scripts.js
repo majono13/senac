@@ -19,9 +19,8 @@ class Post {
         if (this.validaDados()) {
             const postagem = this.criaPostagem();
             this.postagem.push(postagem);
-            exibeMensagem(this.postagem);
+            this.exibeMensagem(this.postagem);
             this.limpaImput();
-            console.log(this.postagem)
             this.id++
         } else {
             this.exibeErro();
@@ -67,74 +66,82 @@ class Post {
 
     editar(id) {
 
-        button.className += " atualizar"
-        for (let i in this.postagem) {
-            if (this.postagem[i].id === id) {
-                button.innerText = 'Atualizar'
-                this.nome.value = this.postagem[i].nome;
-                this.conteudo.value = this.postagem[i].mensagem
 
-                button.addEventListener('click', () => {
-                    if (button.classList.contains('atualizar')) {
-                        this.postagem[i].nome = document.querySelector('#nome').value;
-                        this.postagem[i].mensagem = document.querySelector('#texto').value;
-                        this.limpaImput()
-                        exibeMensagem(this.postagem)
-                    }
+        button.className = "atualizar"
 
+        button.innerText = 'Atualizar'
+
+        this.nome.value = this.postagem[id].nome
+        this.conteudo.value = this.postagem[id].mensagem
+
+        button.addEventListener('click', () => {
+            if (button.classList.contains('atualizar')) {
+                let novArray = this.postagem.map(() => {
+                    this.postagem[id].mensagem = this.conteudo.value
                 })
+                this.exibeMensagem(this.postagem)
+                this.limpaImput()
+                return
             }
-        }
-    }
-
-}
-
-function exibeMensagem(postagem) {
-    const sectionP = document.querySelector('.postagens')
-
-    sectionP.innerHTML = ''
-    for (let i in postagem) {
-        //cria divs e buttons da postagem
-        const div = document.createElement('div');
-        const divImg = document.createElement('div')
-        const excluir = document.createElement('button')
-        const editar = document.createElement('button')
-        const img = document.createElement('img');
-
-        img.src = 'img/usuario.png'
-
-        //adciona classe a div e buttons
-        divImg.className = 'div-img'
-        img.className = 'img-user'
-        div.className = 'postagem';
-        excluir.className = 'btn-excluir';
-        editar.className = 'btn-editar';
-
-        //exibe nome autor
-        div.innerHTML += `<h2>@${postagem[i].nome} diz:</h2>`;
-
-        //cria div pai e div com imagem
-        div.appendChild(divImg)
-        divImg.appendChild(img)
-        sectionP.appendChild(div);
-
-        //exibe a mensagem e cria os botões
-        div.innerHTML += `<p>${postagem[i].mensagem}</p> </br>`;
-        excluir.innerText = 'Excluir';
-        editar.innerText = 'Editar';
-        div.appendChild(excluir);
-        div.appendChild(editar);
-
-        //captura evento de click nos botões
-        excluir.addEventListener('click', () => {
-            post.excluir(postagem[i].id)
-        });
-
-        editar.addEventListener('click', () => {
-            post.editar(postagem[i].id)
         })
 
+
+
     }
+
+    exibeMensagem(postagem) {
+        console.log(this.postagem)
+        const sectionP = document.querySelector('.postagens')
+
+        sectionP.innerHTML = ''
+
+
+        for (let i in postagem) {
+            //cria divs e buttons da postagem
+            const div = document.createElement('div');
+            const divImg = document.createElement('div')
+            const excluir = document.createElement('button')
+            const editar = document.createElement('button')
+            const img = document.createElement('img');
+
+            img.src = 'img/usuario.png'
+
+            //adciona classe a div e buttons
+            divImg.className = 'div-img'
+            img.className = 'img-user'
+            div.className = 'postagem';
+            excluir.className = 'btn-excluir';
+            editar.className = 'btn-editar';
+
+            //exibe nome autor
+            div.innerHTML += `<h2>@${postagem[i].nome} diz:</h2>`;
+
+            //cria div pai e div com imagem
+            div.appendChild(divImg)
+            divImg.appendChild(img)
+            sectionP.appendChild(div);
+
+            //exibe a mensagem e cria os botões
+            div.innerHTML += `<p>${postagem[i].mensagem}</p> </br>`;
+            excluir.innerText = 'Excluir';
+            editar.innerText = 'Editar';
+            div.appendChild(excluir);
+            div.appendChild(editar);
+
+            //captura evento de click nos botões
+            excluir.addEventListener('click', () => {
+                this.excluir(postagem[i].id)
+            });
+
+            editar.addEventListener('click', () => {
+                this.editar(postagem[i].id)
+            })
+        }
+        button.innerText = "Postar";
+        button.className = 'btn-postar'
+
+    }
+
 }
 
 const post = new Post();
